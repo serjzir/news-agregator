@@ -66,7 +66,6 @@ func main() {
 func ParserUrl(url string, posts chan<- []storage.Post, errs chan<- error, period int) {
 	for {
 		news, err := clientrss.Parse(url)
-		print(&news)
 		if err != nil {
 			errs <- err
 			continue
